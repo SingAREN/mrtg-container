@@ -1,0 +1,1 @@
+*/5 * * * * root /usr/bin/docker run -d --rm -e TZ=Asia/Singapore -v /opt/mrtg/config:/opt/mrtg/config:ro -v /opt/mrtg/data:/opt/mrtg/data -v /opt/mrtg/mrtg_lib:/var/lib/mrtg  mrtg:latest /usr/bin/mrtg /opt/mrtg/config/mrtg.cfg --lock-file /var/lock/mrtg/mrtg_l --confcache-file /var/lib/mrtg/mrtg.ok
