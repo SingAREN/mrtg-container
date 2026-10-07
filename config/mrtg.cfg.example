@@ -1,1 +1,36 @@
+WorkDir: /opt/mrtg/data
+WriteExpires: Yes
+Options[_]: bits, noinfo
+MaxBytes[_]: 125000000000
+XScale[_]: 0.7
+YScale[_]: 0.7
+XZoom[_]: 2.0
+YZoom[_]: 2.0
+Background[_]: #FFFFFF
+YLegend[_]: Bits per Second
+ShortLegend[_]: b/s
+Legend1[_]: &nbsp;Incoming Traffic in Bits per Second
+Legend2[_]: &nbsp;Outgoing Traffic in Bits per Second
+Legend3[_]: &nbsp;Maximal 5 Minute Incoming Traffic
+Legend4[_]: &nbsp;Maximal 5 Minute Outgoing Traffic
+LegendI[_]: &nbsp;In:
+LegendO[_]: &nbsp;Out:
+XSize[_]: 600
+YSize[_]: 150
+Colours[_]: GREEN#00FF00,BLUE#0000FF,DARK GREEN#006600,VIOLET#FF00FF
 
+#ThreshDir: WorkDir: C:\Log\mrtg
+
+## Device 1
+
+Target[DEVICE1-INTERFACE6]: \Ethernet9/6:COMMUNITY@192.168.90.12:::::2
+Title[DEVICE1-INTERFACE6]: DEVICE1: Traffic Analysis for DEVICE1 Ethernet9/6
+PageTop[DEVICE1-INTERFACE6]: <h1>DEVICE1: Traffic Analysis for DEVICE1 Ethernet9/6</h1>
+
+Target[DEVICE1-INTERFACE10]: \Ethernet9/10:COMMUNITY@192.168.90.12:::::2
+Title[DEVICE1-INTERFACE10]: DEVICE1: Traffic Analysis for DEVICE1 Ethernet9/10
+PageTop[DEVICE1-INTERFACE10]: <h1>DEVICE1: Traffic Analysis for DEVICE1 Ethernet9/10</h1>
+
+Target[DEVICE1-INTERFACE14]: \Ethernet9/14:COMMUNITY@192.168.90.12:::::2
+Title[DEVICE1-INTERFACE14]: DEVICE1: Traffic Analysis for DEVICE1 Ethernet9/14 
+PageTop[DEVICE1-INTERFACE14]: <h1>DEVICE1: Traffic Analysis for DEVICE1 Ethernet9/14</h1>
