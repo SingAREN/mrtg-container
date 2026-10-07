@@ -20,6 +20,7 @@ Every 5 minutes, a host cron job starts a short-lived container. The container p
 
 ```
 .
+├── .gitignore                 # ignores config/mrtg.cfg and mrtg_lib/
 ├── Dockerfile                 # Ubuntu 24.04 image with MRTG
 ├── mrtg_cron                  # cron entry that runs MRTG every 5 minutes
 ├── config/
@@ -28,7 +29,11 @@ Every 5 minutes, a host cron job starts a short-lived container. The container p
     └── .gitignore             # keeps the folder in git but ignores everything written to it
 ```
 
-Everything MRTG writes to `data/` is ignored by git, so graphs and logs are never committed. Only the empty folder is kept in the repository.
+Site-specific files are ignored by git, so they are never committed:
+
+- `config/mrtg.cfg`, your real configuration, which contains SNMP community strings
+- everything MRTG writes to `data/`; only the empty folder is kept in the repository
+- `mrtg_lib/`, MRTG's config cache
 
 ## Requirements
 
@@ -80,7 +85,7 @@ You can also generate targets from a device with `cfgmaker`, then copy the ones 
 sudo docker run --rm mrtg:latest cfgmaker --snmp-options=:::::2 --ifref=descr YOUR_COMMUNITY@10.0.0.1
 ```
 
-> `mrtg.cfg` contains SNMP community strings. Don't commit it back to the repository.
+> `mrtg.cfg` contains SNMP community strings. It is listed in `.gitignore`, so `git add` skips it. Only `git add -f` would commit it.
 
 ### 3. Set up the cron job
 
