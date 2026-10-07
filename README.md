@@ -25,7 +25,10 @@ Every 5 minutes, a host cron job starts a short-lived container. The container p
 ├── config/
 │   └── mrtg.cfg.example       # example configuration; copy to mrtg.cfg and edit
 └── data/                      # MRTG output (HTML, PNG, logs)
+    └── .gitignore             # keeps the folder in git but ignores everything written to it
 ```
+
+Everything MRTG writes to `data/` is ignored by git, so graphs and logs are never committed. Only the empty folder is kept in the repository.
 
 ## Requirements
 
