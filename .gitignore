@@ -1,0 +1,6 @@
+# Site-specific MRTG configuration (contains SNMP community strings).
+# Copy config/mrtg.cfg.example to config/mrtg.cfg and edit it locally.
+config/mrtg.cfg
+
+# MRTG config cache, mounted into the container at /var/lib/mrtg
+mrtg_lib/
